@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="filerepositorydb">
+  <database-model serializer="dbm" rdbms="HSQLDB" format-version="4.1">
+    <root id="1"/>
+    <database id="2" parent="1" name="PUBLIC">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </database>
+    <schema id="3" parent="2" name="INFORMATION_SCHEMA"/>
+    <schema id="4" parent="2" name="PUBLIC">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="5" parent="2" name="SYSTEM_LOBS"/>
+    <table id="6" parent="4" name="FILE"/>
+    <table id="7" parent="4" name="USER"/>
+    <table id="8" parent="4" name="USER_USER_FILES"/>
+    <column id="9" parent="6" name="ID">
+      <Position>1</Position>
+      <DataType>BIGINT(64)|-5</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="10" parent="6" name="LINK">
+      <Position>2</Position>
+      <DataType>VARCHAR(255)|12</DataType>
+    </column>
+    <key id="11" parent="6" name="SYS_PK_10113">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="12" parent="7" name="ID">
+      <Position>1</Position>
+      <DataType>BIGINT(64)|-5</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="13" parent="7" name="PASSWORD">
+      <Position>2</Position>
+      <DataType>VARCHAR(255)|12</DataType>
+    </column>
+    <column id="14" parent="7" name="USERNAME">
+      <Position>3</Position>
+      <DataType>VARCHAR(255)|12</DataType>
+    </column>
+    <key id="15" parent="7" name="SYS_PK_10115">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="16" parent="8" name="USER_ID">
+      <Position>1</Position>
+      <DataType>BIGINT(64)|-5</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="17" parent="8" name="USER_FILES_ID">
+      <Position>2</Position>
+      <DataType>BIGINT(64)|-5</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <foreign-key id="18" parent="8" name="FKC7Q4GOWEF8SFWAYA8WFCH23OW">
+      <ColNames>USER_ID</ColNames>
+      <RefSchemaName>PUBLIC</RefSchemaName>
+      <RefTableName>USER</RefTableName>
+      <RefKeyName>SYS_PK_10115</RefKeyName>
+      <RefColNames>ID</RefColNames>
+    </foreign-key>
+    <foreign-key id="19" parent="8" name="FKLJG0RDI8QAH3TOA8R4KQTOV4P">
+      <ColNames>USER_FILES_ID</ColNames>
+      <RefSchemaName>PUBLIC</RefSchemaName>
+      <RefTableName>FILE</RefTableName>
+      <RefKeyName>SYS_PK_10113</RefKeyName>
+      <RefColNames>ID</RefColNames>
+    </foreign-key>
+  </database-model>
+</dataSource>

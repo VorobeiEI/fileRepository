@@ -1,0 +1,13 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<form action="/login" tclass="form-signin" method="POST">
+  <h2 class="form-heading">Log in</h2>
+  <label for="inputUsername" class="sr-only">Username</label>
+  <input type="text"  name="username" id="inputUsername" class="form-control" placeholder="Username" required="required" autofocus="autofocus" />
+  <label for="inputPassword" class="sr-only">Password</label>
+  <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required="required" />
+  <button class="btn btn-lg btn-primary btn-block" type="submit" value="login" name="login">Login</button>
+  <a href="/registration">Registration page</a><br/>
+    <br/>
+    <div th:text="${error}"/>
+</form>
+</html>
